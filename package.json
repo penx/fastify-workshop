@@ -6,6 +6,9 @@
   "keywords": [],
   "author": "Alasdair McLeay <alasdair.mcleay@me.com>",
   "license": "ISC",
+  "scripts": {
+    "test": "tap"
+  },
   "bugs": {
     "url": "https://github.com/penx/fastify-workshop/issues"
   },
@@ -14,5 +17,8 @@
     "fastify": "^3.11.0",
     "fluent-json-schema": "^2.0.3",
     "pino-pretty": "^4.5.0"
+  },
+  "devDependencies": {
+    "tap": "^14.11.0"
   }
 }
