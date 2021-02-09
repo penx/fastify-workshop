@@ -1,6 +1,6 @@
-export default function (fastify, opts, done) {
-    fastify.get('/', () => {
-        return { hello: 'world' }
-      })
-    done()
+export default function (fastify) {
+    fastify.get('/users', {}, async () => [
+        { username: 'alice' },
+        { username: 'bob' }
+      ])
   }

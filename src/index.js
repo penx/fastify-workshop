@@ -1,10 +1,11 @@
 import Fastify from 'fastify'
-import users from './routes/users.js'
 
-export default () => {
+function createApp () {
     const fastify = Fastify()
-    fastify.register(users)
+    fastify.register(import('./routes/users.js'))
 
     return fastify;
 }
+
+export default createApp;
 
