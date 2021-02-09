@@ -12,6 +12,7 @@
   "homepage": "https://github.com/penx/fastify-workshop#readme",
   "dependencies": {
     "fastify": "^3.11.0",
+    "fluent-json-schema": "^2.0.3",
     "pino-pretty": "^4.5.0"
   }
 }
