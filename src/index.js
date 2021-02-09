@@ -5,11 +5,11 @@ function createApp(config) {
   fastify.register(import("fastify-jwt"), {
     secret: "supersecret",
   });
-  
+
   fastify.register(import("./routes/users.js"));
   fastify.register(import("./routes/login.js"));
 
-  fastify.log.info({config});
+  fastify.log.info({ config });
 
   return fastify;
 }
