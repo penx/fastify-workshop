@@ -1,0 +1,17 @@
+{
+  "name": "fastify-workshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server"
+  },
+  "repository": "git+https://github.com/penx/fastify-workshop.git",
+  "keywords": [],
+  "author": "Alasdair McLeay <alasdair.mcleay@me.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/penx/fastify-workshop/issues"
+  },
+  "homepage": "https://github.com/penx/fastify-workshop#readme"
+}
