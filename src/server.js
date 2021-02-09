@@ -1,11 +1,7 @@
-import Fastify from 'fastify'
+import createApp from './index.js';
 
 const start = async function () {
-  const fastify = Fastify()
-
-  fastify.get('/', () => {
-    return { hello: 'world' }
-  })
+  const fastify = createApp();
 
   try {
     await fastify.listen(3000)
