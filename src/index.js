@@ -1,12 +1,25 @@
 import Fastify from "fastify";
+import autoload from "fastify-autoload";
+import { fileURLToPath } from 'url'
+import { dirname, join } from "path";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 function createApp(config) {
   const fastify = Fastify({ logger: { prettyPrint: true } });
 
-  fastify.register(import("./plugins/authentication.js"), config);
-  fastify.register(import("./routes/user/index.js"));
-  fastify.register(import("./routes/users.js"));
-  fastify.register(import("./routes/login.js"));
+  fastify.register(
+    autoload,
+    {
+      options: config,
+      dir: join(__dirname, "plugins"),
+    },
+    
+  );
+  fastify.register(autoload, {
+    dir: join(__dirname, "routes"),
+  });
 
   fastify.log.info({ config });
 

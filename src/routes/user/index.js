@@ -7,7 +7,7 @@ const schema = {
 };
 
 export default async function (fastify) {
-  fastify.get("/user", { schema, preValidation:  [fastify.authenticate]}, async (request) => {
+  fastify.get("/", { schema, preValidation:  [fastify.authenticate]}, async (request) => {
     request.log.info("User route");
     return request.user;
   });
