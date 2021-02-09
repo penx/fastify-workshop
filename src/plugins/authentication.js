@@ -3,15 +3,15 @@ async function authenticate(fastify, opts) {
     secret: opts.JWT_SECRET,
   });
 
-  fastify.decorate("authenticate", async function (request, reply) {
+  fastify.decorate("authenticate", async function (request, response) {
     try {
       await request.jwtVerify();
     } catch (err) {
-      reply.send(err);
+      response.send(err);
     }
   });
 }
 
-authenticate[Symbol.for('skip-override')] = true
+authenticate[Symbol.for("skip-override")] = true;
 
 export default authenticate;
