@@ -9,6 +9,6 @@ const schema = {
 export default async function (fastify) {
   fastify.post("/login", { schema }, async (request) => {
     request.log.info("Login route");
-    return;
+    return 'success';
   });
 }
