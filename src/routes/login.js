@@ -1,4 +1,5 @@
 import S from "fluent-json-schema";
+import createError from "http-errors";
 
 const schema = {
   body: S.object()
@@ -7,8 +8,13 @@ const schema = {
 };
 
 export default async function (fastify) {
-  fastify.post("/login", { schema }, async (request) => {
-    request.log.info("Login route");
-    return 'success';
+  fastify.post("/login", { schema }, async (request, response) => {
+    const { username, password } = request.body;
+    request.log.info(`Login route ${username}`);
+    if (username === password) {
+      return { token: fastify.jwt.sign({ username }) };
+    } else {
+      return createError(401, "Unauthorized");
+    }
   });
 }

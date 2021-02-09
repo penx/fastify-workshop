@@ -19,6 +19,7 @@
     "fastify": "^3.11.0",
     "fastify-jwt": "^2.3.0",
     "fluent-json-schema": "^2.0.3",
+    "http-errors": "^1.8.0",
     "pino-pretty": "^4.5.0"
   },
   "devDependencies": {
