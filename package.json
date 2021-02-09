@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/penx/fastify-workshop#readme",
   "dependencies": {
+    "env-schema": "^2.0.1",
     "fastify": "^3.11.0",
     "fastify-jwt": "^2.3.0",
     "fluent-json-schema": "^2.0.3",

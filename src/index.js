@@ -1,6 +1,6 @@
 import Fastify from "fastify";
 
-function createApp() {
+function createApp(config) {
   const fastify = Fastify({ logger: { prettyPrint: true } });
   fastify.register(import("fastify-jwt"), {
     secret: "supersecret",
@@ -8,6 +8,8 @@ function createApp() {
   
   fastify.register(import("./routes/users.js"));
   fastify.register(import("./routes/login.js"));
+
+  fastify.log.info({config});
 
   return fastify;
 }
