@@ -1,4 +1,4 @@
-export default async function (fastify, opts) {
+async function authenticate(fastify, opts) {
   fastify.register(import("fastify-jwt"), {
     secret: opts.JWT_SECRET,
   });
@@ -11,3 +11,7 @@ export default async function (fastify, opts) {
     }
   });
 }
+
+authenticate[Symbol.for('skip-override')] = true
+
+export default authenticate;
