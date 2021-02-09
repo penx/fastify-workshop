@@ -1,11 +1,10 @@
-import Fastify from 'fastify'
+import Fastify from "fastify";
 
-function createApp () {
-    const fastify = Fastify()
-    fastify.register(import('./routes/users.js'))
+function createApp() {
+  const fastify = Fastify({ logger: { prettyPrint: true } });
+  fastify.register(import("./routes/users.js"));
 
-    return fastify;
+  return fastify;
 }
 
 export default createApp;
-

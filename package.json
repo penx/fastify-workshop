@@ -11,6 +11,7 @@
   },
   "homepage": "https://github.com/penx/fastify-workshop#readme",
   "dependencies": {
-    "fastify": "^3.11.0"
+    "fastify": "^3.11.0",
+    "pino-pretty": "^4.5.0"
   }
 }
